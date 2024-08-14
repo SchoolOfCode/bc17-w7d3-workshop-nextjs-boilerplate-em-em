@@ -14,9 +14,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={aleo.className}>
-        <Header />
-        {children}
-        <Footer />
+        <div className="wrapper grid">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

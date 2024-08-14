@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 10px;
+  	color: black;
+}
+
+.grid {
+	display: grid;
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+	margin: 2rem;
+	grid-template-rows: 5.5rem 1fr 10rem;
+}

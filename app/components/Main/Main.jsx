@@ -11,7 +11,7 @@ const Main = function() {
             <main className={styles.site_main}>
                 <Hero />
                 <HowItWorks />
-        </main>
+            </main>
         </>
     );
 }

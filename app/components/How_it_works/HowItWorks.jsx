@@ -18,7 +18,7 @@ const HowItWorks = function() {
         image_alt: "couch", 
         heading: "We recommend ...",   
         text: "We send you a bespoke set of fireplace recommendations.", 
-    }]
+    }];
     // const card = {
     //     image: "images/how-it-works-1.png",
     //     image_alt: "couches", 
