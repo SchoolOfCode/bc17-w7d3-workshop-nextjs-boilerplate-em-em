@@ -1,0 +1,15 @@
+.site_footer {
+    display: grid;
+	background-color: #f0f0f0;
+	grid-template-columns: 1fr 1fr;
+	padding: 2rem;
+	font-size: 2rem;
+}
+
+.find-us {
+	justify-content: space-around;
+}
+
+.copyright-info {
+	justify-content: space-around;
+}
