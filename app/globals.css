@@ -5,6 +5,10 @@
   	color: black;
 }
 
+body {
+	display: flex;
+}
+
 .grid {
 	display: grid;
 }
@@ -15,7 +19,7 @@
 }
 
 .wrapper {
-  width: 100%;
+    width: 100%;
 	margin: 2rem;
 	grid-template-rows: 5.5rem 1fr 10rem;
 }
