@@ -1,0 +1,30 @@
+.hero {
+    display: grid;
+	grid-template-rows: 1.7fr 0.5fr;
+}
+
+.hero_img {
+	width: 100%;
+}
+
+.hero_text {
+	background-color: #ef901b;
+	padding: 1.5rem;
+}
+
+.hero_header {
+	font-size: 3.5rem;
+	line-height: 1.3em;
+}
+
+.book_consultation {
+	font-size: 2rem;
+	font-weight: 800;
+}
+
+.book_number {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 600;
+    margin-left: 1rem;
+}
