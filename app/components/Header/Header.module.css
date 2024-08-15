@@ -18,7 +18,11 @@
 
 .navLink {
     text-decoration: none;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+}
+
+.navLink:hover {
+    text-decoration: underline;
 }
 
 .menuClose {

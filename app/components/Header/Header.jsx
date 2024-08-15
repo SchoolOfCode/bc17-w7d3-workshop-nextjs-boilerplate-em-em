@@ -31,8 +31,8 @@ const Header = function () {
 						
                         <nav>
                         <ul className={styles.linkList}>
-                            <li><Link className={styles.navLink } href="/">Home</Link></li>
-                            <li><Link className={styles.navLink }href="/founders">Meet the Founders</Link></li>
+                            <li><Link onClick={handleClick} className={styles.navLink} href="/">Home</Link></li>
+                            <li><Link onClick={handleClick} className={styles.navLink} href="/founders">Meet the Founders</Link></li>
                             </ul>
                         </nav>
                     
