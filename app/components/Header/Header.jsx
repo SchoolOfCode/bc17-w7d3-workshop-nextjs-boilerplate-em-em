@@ -30,9 +30,9 @@ const Header = function () {
                         <img onClick={handleClick} className={styles.menuClose} src="images/menu-close-button.png" alt="close menu button"	/>
 						
                         <nav>
-                            <ul className={styles.linkList}>
-                            <li><Link href="/">Home</Link></li>
-                            <li><Link href="/founders">Founders</Link></li>
+                        <ul className={styles.linkList}>
+                            <li><Link className={styles.navLink } href="/">Home</Link></li>
+                            <li><Link className={styles.navLink }href="/founders">Meet the Founders</Link></li>
                             </ul>
                         </nav>
                     

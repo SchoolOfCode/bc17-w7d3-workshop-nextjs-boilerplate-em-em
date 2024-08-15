@@ -14,10 +14,19 @@
 
 .linkList {
     list-style: none;
+    
 }
 
+
+.navLink {
+    text-decoration: none;
+    font-size: 5rem;
+
+}
+
+
 .menuClose {
-    height: 2rem;
+    height: 5.5rem;
 }
 
 .menu {
@@ -30,3 +39,4 @@
     text-align: right;
     padding: 2rem;
 }
+
