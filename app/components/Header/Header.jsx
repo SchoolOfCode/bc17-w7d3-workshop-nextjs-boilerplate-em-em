@@ -13,8 +13,16 @@ const Header = function () {
 
     function handleClick (){
         setMenuStatus(!menuStatus);
-        console.log(menuStatus);
+        if (menuStatus){ // when the menu is open
+            // Code block:
+            // do something that changes the text-decoration of the links
+        }
     }
+
+    const [pageStatus, setPageStatus] = useState(true);
+
+    console.log(window.location.pathname);
+    let location = window.location.pathname;
 
     return (
 			<header className={styles.siteHeader}>
