@@ -23,10 +23,11 @@ const Header = function () {
 					onClick={handleClick}
 					className={styles.burgerMenu}
 					src="images/menu-open-button.png"
-					alt="burger menu button"
+					alt="open menu burger button"
 				/>
 				{menuStatus && (
-					<div className="menu">
+					<div className={styles.menu}>
+                        <img onClick={handleClick} className={styles.menuOpenClose} src="images/menu-close-button.png" alt="close menu button"	/>
 						<Link href="/">Home</Link>
 						<Link href="/founders">Founders</Link>
 					</div>
