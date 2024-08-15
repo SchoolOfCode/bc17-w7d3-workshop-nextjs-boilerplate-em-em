@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./Header.module.css";
 import Link from "next/link";
@@ -11,15 +11,19 @@ const Header = function () {
 
     const [menuStatus, setMenuStatus] = useState(false);
 
+    const [pathName, setPathName] = useState("/");
+
     function handleClick (){
         setMenuStatus(!menuStatus);
-        if (menuStatus){ // when the menu is open
-            // Code block:
-            // do something that changes the text-decoration of the links
-        }
+       
     }
 
-    const [pageStatus, setPageStatus] = useState(true);
+    useEffect(() => {
+        console.log("menu link change")
+
+    }, [pathName]);
+
+    // const [pageStatus, setPageStatus] = useState(true);
 
     console.log(window.location.pathname);
     let location = window.location.pathname;
