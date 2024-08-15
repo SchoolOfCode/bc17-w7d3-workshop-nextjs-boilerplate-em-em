@@ -21,15 +21,21 @@ const Header = function () {
 				<h1 className={styles.siteTitle}>🔥Fireplace Palace</h1>
 				<img
 					onClick={handleClick}
-					className={styles.burgerMenu}
+					className={styles.menuOpen}
 					src="images/menu-open-button.png"
 					alt="open menu burger button"
 				/>
 				{menuStatus && (
 					<div className={styles.menu}>
-                        <img onClick={handleClick} className={styles.menuOpenClose} src="images/menu-close-button.png" alt="close menu button"	/>
-						<Link href="/">Home</Link>
-						<Link href="/founders">Founders</Link>
+                        <img onClick={handleClick} className={styles.menuClose} src="images/menu-close-button.png" alt="close menu button"	/>
+						
+                        <nav>
+                            <ul className={styles.linkList}>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/founders">Founders</Link></li>
+                            </ul>
+                        </nav>
+                    
 					</div>
 				)}
 			</header>
