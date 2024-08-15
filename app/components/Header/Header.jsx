@@ -11,22 +11,9 @@ const Header = function () {
 
     const [menuStatus, setMenuStatus] = useState(false);
 
-    const [pathName, setPathName] = useState("/");
-
     function handleClick (){
-        setMenuStatus(!menuStatus);
-       
+        setMenuStatus(!menuStatus);   
     }
-
-    useEffect(() => {
-        console.log("menu link change")
-
-    }, [pathName]);
-
-    // const [pageStatus, setPageStatus] = useState(true);
-
-    console.log(window.location.pathname);
-    let location = window.location.pathname;
 
     return (
 			<header className={styles.siteHeader}>
@@ -43,8 +30,8 @@ const Header = function () {
 						
                         <nav>
                         <ul className={styles.linkList}>
-                            <li><Link onClick={handleClick} className={styles.navLink} href="/">Home</Link></li>
-                            <li><Link onClick={handleClick} className={styles.navLink} href="/founders">Meet the Founders</Link></li>
+                            <li><Link onClick={handleClick} className={(window.location.pathname === "/") ? styles.navLinkActive : styles.navLink} href="/">Home</Link></li>
+                            <li><Link onClick={handleClick} className={(window.location.pathname === "/founders") ? styles.navLinkActive : styles.navLink} href="/founders">Meet the Founders</Link></li>
                             </ul>
                         </nav>
                     
