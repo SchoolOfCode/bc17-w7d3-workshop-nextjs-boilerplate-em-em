@@ -9,24 +9,20 @@
 }
 
 .menuOpen {
-    height: 100%;
+    height: 3.5rem;
 }
 
 .linkList {
     list-style: none;
-    
 }
-
 
 .navLink {
     text-decoration: none;
-    font-size: 5rem;
-
+    font-size: 3.5rem;
 }
 
-
 .menuClose {
-    height: 5.5rem;
+    height: 3.5rem;
 }
 
 .menu {
