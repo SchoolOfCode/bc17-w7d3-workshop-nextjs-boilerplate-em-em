@@ -4,7 +4,6 @@ import Button from '../Button/Button.jsx';
 
 export default function Trusted () {
 
-    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect ( ()=> {
 
@@ -21,6 +20,7 @@ export default function Trusted () {
                     <li><Button /></li>
                     <li><Button /></li>
                 </ul>
+                <Review />
             </div>
         </section>
     );
