@@ -6,7 +6,9 @@ import styles from './Trusted.module.css';
 
 export default function Trusted () {
 
-    const [selectedCountry, setSelectedCountry] = useState(null);
+    // Set some state variables and their corresponding setter functions
+
+    const [selectedCountry, setSelectedCountry] = useState(null); // selectedCountry represents
     const [selectedReview, setSelectedReview] = useState([]);
  
     useEffect ( ()=> {
