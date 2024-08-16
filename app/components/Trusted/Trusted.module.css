@@ -1,0 +1,10 @@
+.trusted {
+    background-color: aqua;
+}
+
+.trustedTitle {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
+    padding: 2rem 0;
+}
