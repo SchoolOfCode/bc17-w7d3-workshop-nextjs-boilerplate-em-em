@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Trusted.module.css';
 import Button from '../Button/Button.jsx';
 
 export default function Trusted () {
+
+    const [selectedCountry, setSelectedCountry] = useState(null);
+
+    useEffect ( ()=> {
+
+    }, [selectedCountry] )
+
+
     return(
         <section className = {styles.trusted}>
             <h2 className = {styles.trustedTitle}>Trusted.</h2>
