@@ -14,3 +14,9 @@
 	text-align: center;
 	font-weight: 600;
 }
+
+.trustedList {
+    display : flex;
+    list-style: none;
+
+}
