@@ -8,3 +8,9 @@
     font-weight: 500;
     padding: 2rem 0;
 }
+
+.trustedText {
+	font-size: 1.8rem;
+	text-align: center;
+	font-weight: 600;
+}

@@ -1,3 +1,3 @@
 export default function Founders() {
-  return<h1>Muhahaha</h1>;
+  return <h1>Meet the Founders</h1>;
 }

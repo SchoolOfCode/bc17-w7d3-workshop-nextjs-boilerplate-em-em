@@ -35,7 +35,7 @@
 
 ## Hackathon
 
-- Plan out on Figma
+- Plan out on Figma ✅
 - Transfer over plan to Github projects
 - Create Components
   - Trusted Section
