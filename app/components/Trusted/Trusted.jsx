@@ -7,9 +7,12 @@ import styles from './Trusted.module.css';
 export default function Trusted () {
 
     const [selectedCountry, setSelectedCountry] = useState(null);
+    const [selectedReview, setSelectedReview] = useState([]);
  
     useEffect ( ()=> {
-        console.log("useEffect works!!!!");
+        fetch(`https://seal-app-336e8.ondigitalocean.app/reviews?country=${selectedCountry}`)
+        .then(response => response.json())
+        .then(json => setSelectedReview(json))        
     }, [selectedCountry] );
     
 
@@ -22,8 +25,12 @@ export default function Trusted () {
                     <li><button onClick={()=> setSelectedCountry('england')} className={styles.button}>England</button></li>
                     <li><button onClick={()=> setSelectedCountry('wales')} className={styles.button}>Wales</button></li>
                     <li><button onClick={()=> setSelectedCountry('scotland')} className={styles.button}>Scotland</button></li>
-
                 </ul>
+                <div>
+                    <p>{JSON.stringify(selectedReview.text)}</p>
+                    <br/ >
+                    <p>{JSON.stringify(selectedReview.author)}</p>
+                </div>
             </div>
         </section>
     );
