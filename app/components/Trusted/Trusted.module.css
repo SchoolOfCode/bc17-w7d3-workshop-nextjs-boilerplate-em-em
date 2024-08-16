@@ -26,6 +26,15 @@
     padding: 0;
 }
 
+
+.button {
+    background-color : #787878;
+    color : #fff; 
+    
+    }
+
+
+
 .review {
     width: 100%;   
 }
