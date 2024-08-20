@@ -68,11 +68,11 @@
 - Create page.css in the folder ✅
 - Create folder Form in components folder ✅
     - create files - form.jsx and form.module.css ✅
-- Import Form component to page.js inside Form folder
-- Replace phone number with a Button link to contact us page
+- Import Form component to page.js inside Form folder ✅
+- Replace phone number with a Button link to contact us page 
 - Create contact us form
-  - Personal info fieldset
-  - Contact info fieldset
+  - Personal info fieldset ✅
+  - Contact info fieldset ✅
 - Create state to track the first input field
 - Create onChange handler for the first input field
   - console log the field value
