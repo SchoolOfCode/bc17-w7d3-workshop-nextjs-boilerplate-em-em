@@ -63,8 +63,11 @@
 
 ## Contact Us form
 
-- Create contact us folder
-- Create page.js in the folder
+- Create contact us folder ✅
+- Create page.js in the folder ✅
+- Create page.css in the folder ✅
+- Create folder Form in components folder ✅
+    - create files - form.jsx and form.module.css ✅
 - Replace phone number with a Button link to contact us page
 - Create contact us form
   - Personal info fieldset
