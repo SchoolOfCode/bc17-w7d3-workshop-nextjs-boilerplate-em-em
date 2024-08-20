@@ -26,7 +26,7 @@ const Hero = function() {
 							Perfect Fireplace...
 						</h2>
 						<button className={styles.book_consultation}>
-							<Link href="/contactUs">Book consultation</Link>
+							<Link href="/booking">Book consultation</Link>
 						</button>
 					</div>
 				</section>

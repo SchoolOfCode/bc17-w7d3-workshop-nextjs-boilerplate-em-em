@@ -35,6 +35,7 @@ export default function Form() {
                     <input type="text" name='email'/>
                 </label>
             </fieldset>
+            <button type="submit">Request Design Consultation</button>
         </form>
     );
 }
