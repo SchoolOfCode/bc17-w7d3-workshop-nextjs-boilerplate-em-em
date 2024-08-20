@@ -49,9 +49,8 @@ export default function Form() {
     const [isError, setIsError] = useState(false);
 
     // Create handler function for submitting form.
-    const handleSubmit = function () {
-
-
+    const handleSubmit = function (event) {
+        event.preventDefault();
         // should check for empty fields
         // if any field is empty,
         if (fullName === "" || postcode === "" || address === "" || city === "" || phone_num === "" || email === "") {     
@@ -66,6 +65,7 @@ export default function Form() {
             console.log('city: ', city);
             console.log("phone number: ", phone_num);
             console.log("email: ", email);
+            setIsError(false)
         };
     };
 
@@ -132,6 +132,7 @@ export default function Form() {
 						/>
 					</label>
 				</fieldset>
+                {isError && <p style={{color:"red"}}>Error all fields are required - some missing</p>}
 				<button type="submit">Request Design Consultation</button>
 			</form>
 		);
