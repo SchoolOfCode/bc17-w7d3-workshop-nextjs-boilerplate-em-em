@@ -6,44 +6,14 @@ import { useState } from 'react';
 export default function Form() {
 
     // Create state that stores the content inside fullname input box
-    const [fullName, setFullName] = useState('');
-    const [postcode, setPostcode] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [phone_num, setPhoneNum] = useState("");
-    const [email, setEmail] = useState("");
+    
+	const[formData, setFormData] = useState({fullName: '', postcode:'', address:'', city:'', phone_num:'', email:''});
 
     // Define a function that 
     const handleChange = function (event) {
-        // Change state of fullName to the inputted value
-        if(event.target.name === "fullName" ) {
-            setFullName(event.target.value);
-        }
-        if(event.target.name === "postcode") {
-            setPostcode(event.target.value);
-        }
-        if(event.target.name === "address") {
-            setAddress(event.target.value);
-        }
-        if(event.target.name === "city") {
-            setCity(event.target.value);
-        }
-
-        if (event.target.name === "phone_num") {
-				setPhoneNum(event.target.value);
-        } 
-        
-        if (event.target.name === "email") {
-					setEmail(event.target.value);
-				} 
+		const {name, value} = event.target;
+		setFormData((prevFormData) => ({...prevFormData, [name]: value}));
     };
-
-    // console.log('full name: ', fullName);
-    // console.log('postcode: ', postcode);
-    // console.log('address: ', address);
-    // console.log('city: ', city);
-    // console.log("phone number: ", phone_num);
-    // console.log("email: ", email);
 
     // Create state to show error status (false means no error)
     const [isError, setIsError] = useState(false);
@@ -53,25 +23,19 @@ export default function Form() {
         event.preventDefault();
         // should check for empty fields
         // if any field is empty,
-        if (fullName === "" || postcode === "" || address === "" || city === "" || phone_num === "" || email === "") {     
+        if (!formData.fullName || !formData.postcode || !formData.address || !formData.city || !formData.phone_num || !formData.email) {     
         // should display error and prompt to fill form
         setIsError(!isError);
-    console.log('line 60 form.jsx error - all fields required')
         // else, console log filled fields
         } else { 
-            console.log('full name: ', fullName);
-            console.log('postcode: ', postcode);
-            console.log('address: ', address);
-            console.log('city: ', city);
-            console.log("phone number: ", phone_num);
-            console.log("email: ", email);
+            console.log(`Full Name: ${formData.fullName}, Postcode: ${formData.postcode}, Address: ${formData.address}, City: ${formData.city}, Phone Number: ${formData.phone_num}, Email: ${formData.email}`);
             setIsError(false)
         };
     };
 
     return (
 			<form method="post" onSubmit={handleSubmit}>
-				<fieldset className={styles.personalInfo}>
+				<fieldset className={styles.fieldset}>
 					<legend>Personal Information: </legend>
 					<label>
 						Full Name: * <br />
@@ -79,7 +43,7 @@ export default function Form() {
 							type="text"
 							name="fullName"
 							onChange={(e) => handleChange(e)}
-							value={fullName}
+							value={formData.fullName}
 						/>
 					</label>
 					<label>
@@ -88,7 +52,7 @@ export default function Form() {
 							type="text"
 							name="postcode"
 							onChange={(e) => handleChange(e)}
-							value={postcode}
+							value={formData.postcode}
 						/>
 					</label>
 					<label>
@@ -97,7 +61,7 @@ export default function Form() {
 							type="text"
 							name="address"
 							onChange={(e) => handleChange(e)}
-							value={address}
+							value={formData.address}
 						/>
 					</label>
 					<label>
@@ -106,12 +70,12 @@ export default function Form() {
 							type="text"
 							name="city"
 							onChange={(e) => handleChange(e)}
-							value={city}
+							value={formData.city}
 						/>
 					</label>
 				</fieldset>
 
-				<fieldset className={styles.contactInfo}>
+				<fieldset className={styles.fieldset}>
 					<legend>Contact Information: </legend>
 					<label>
 						Phone Number: * <br />
@@ -119,7 +83,7 @@ export default function Form() {
 							type="text"
 							name="phone_num"
 							onChange={(e) => handleChange(e)}
-							value={phone_num}
+							value={formData.phone_num}
 						/>
 					</label>
 					<label>
@@ -128,7 +92,7 @@ export default function Form() {
 							type="text"
 							name="email"
 							onChange={(e) => handleChange(e)}
-							value={email}
+							value={formData.email}
 						/>
 					</label>
 				</fieldset>
