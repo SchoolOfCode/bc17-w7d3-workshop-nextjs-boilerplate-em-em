@@ -76,9 +76,11 @@
 - Create state to track the first input field ✅
 - Create onChange handler for the first input field ✅
   - console log the field value ✅
-- Create state for the rest of the fields
-- Create handler for the rest the field
+- Create state for the rest of the fields ✅
+- Create handler for the rest the field ✅
 - Check that no form fields are empty on submit
+  - Create handler to deal with form submission
+  - Create state that shows error for empty fields
   - Show error if empty field
 - Console.log all the form data
 

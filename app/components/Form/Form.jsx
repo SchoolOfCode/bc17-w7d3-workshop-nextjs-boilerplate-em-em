@@ -38,18 +38,42 @@ export default function Form() {
 				} 
     };
 
-    console.log('full name: ', fullName);
-    console.log('postcode: ', postcode);
-    console.log('address: ', address);
-    console.log('city: ', city);
-    console.log("phone number: ", phone_num);
-    console.log("email: ", email);
+    // console.log('full name: ', fullName);
+    // console.log('postcode: ', postcode);
+    // console.log('address: ', address);
+    // console.log('city: ', city);
+    // console.log("phone number: ", phone_num);
+    // console.log("email: ", email);
+
+    // Create state to show error status (false means no error)
+    const [isError, setIsError] = useState(false);
+
+    // Create handler function for submitting form.
+    const handleSubmit = function () {
+
+
+        // should check for empty fields
+        // if any field is empty,
+        if (fullName === "" || postcode === "" || address === "" || city === "" || phone_num === "" || email === "") {     
+        // should display error and prompt to fill form
+        setIsError(!isError);
+    console.log('line 60 form.jsx error - all fields required')
+        // else, console log filled fields
+        } else { 
+            console.log('full name: ', fullName);
+            console.log('postcode: ', postcode);
+            console.log('address: ', address);
+            console.log('city: ', city);
+            console.log("phone number: ", phone_num);
+            console.log("email: ", email);
+        };
+    };
 
     return (
-			<form method="post">
+			<form method="post" onSubmit={handleSubmit}>
 				<fieldset className={styles.personalInfo}>
 					<legend>Personal Information: </legend>
-					<label htmlFor="">
+					<label>
 						Full Name: * <br />
 						<input
 							type="text"
@@ -58,7 +82,7 @@ export default function Form() {
 							value={fullName}
 						/>
 					</label>
-					<label htmlFor="">
+					<label>
 						Postcode: * <br />
 						<input
 							type="text"
@@ -76,7 +100,7 @@ export default function Form() {
 							value={address}
 						/>
 					</label>
-					<label htmlFor="">
+					<label>
 						City: * <br />
 						<input
 							type="text"
@@ -89,7 +113,7 @@ export default function Form() {
 
 				<fieldset className={styles.contactInfo}>
 					<legend>Contact Information: </legend>
-					<label htmlFor="">
+					<label>
 						Phone Number: * <br />
 						<input
 							type="text"
@@ -98,7 +122,7 @@ export default function Form() {
 							value={phone_num}
 						/>
 					</label>
-					<label htmlFor="">
+					<label>
 						Email Address: * <br />
 						<input
 							type="text"
