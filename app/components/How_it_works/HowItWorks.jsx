@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./HowItWorks.module.css";
 import Card from "../Card/Card.jsx";
 
+// import images
 import imageOne from "../../../public/images/how-it-works-1.png";
 import imageTwo from "../../../public/images/how-it-works-2.png";
 import imageThree from "../../../public/images/how-it-works-3.png";
 
+// How it works content array to pass in as props
 const HowItWorks = function() {
     const cards = [{
         image: imageOne,
@@ -28,7 +30,8 @@ const HowItWorks = function() {
         <>
             <section className={styles.how_it_works}>
                 <h2 className={styles.how_it_works_h2}>How it works.</h2>
-                <ul>
+                <ul className={styles.card}>
+                    {/* loop through the object above and created a "how it works" card for each item in the array */}
                 {cards.map((card) => {
                     return <Card key={card.image + card.heading} image={card.image} image_alt={card.image_alt} heading={card.heading} text={card.text} />
                 })

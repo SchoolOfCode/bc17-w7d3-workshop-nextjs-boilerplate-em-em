@@ -12,11 +12,13 @@ export default function Trusted () {
     const [selectedReview, setSelectedReview] = useState([]); // selectedReview contains the fetched review
  
     // useEffect which will fetch a review from the corresponding selectedCountry, only if selectedCountry's state changes
+    
     useEffect ( ()=> {
+        if(selectedCountry !== null){
         fetch(`https://seal-app-336e8.ondigitalocean.app/reviews?country=${selectedCountry}`)
         .then(response => response.json())
         .then(json => setSelectedReview(json))        
-    }, [selectedCountry] );
+}}, [selectedCountry] );
     
 
     return(

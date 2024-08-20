@@ -1,6 +1,6 @@
 .how_it_works {
     display: grid;
-	grid-template-rows: 11em 1fr 1fr 1fr;
+	grid-template-rows: 11em 1fr;
 }
 
 .how_it_works_h2 {
@@ -8,4 +8,8 @@
     text-align: center;
     font-weight: 500;
     padding: 2rem 0;
+}
+
+.card {
+    padding: 0;
 }
