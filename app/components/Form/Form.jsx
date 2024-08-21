@@ -75,6 +75,15 @@ export default function Form() {
 						value={state.data.fullName}
 					/>
 				</label>
+                <label>
+					Full Name: * <br />
+					<input
+						type="text"
+						name="fullName"
+						onChange={(e) => handleChange(e)}
+						value={state.data.fullName}
+					/>
+				</label>
 			</fieldset>
 
 			<fieldset className={styles.contactInfo}>

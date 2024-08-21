@@ -89,9 +89,11 @@
 - Copy existing Form files as a backup ✅
 - Delete all fields but one ✅
   > Test ✅
-- Move the one field over to use useReducer
+- Move the one field over to use useReducer ✅
+  > Test ✅
+- Move rest of first fieldset over to useReducer
   > Test
--
+
 
 # Desktop
 
