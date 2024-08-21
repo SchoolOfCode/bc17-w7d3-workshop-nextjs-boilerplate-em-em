@@ -11,6 +11,8 @@
 .hero_text {
 	background-color: #ef901b;
 	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
 }
 
 .hero_header {
@@ -21,11 +23,13 @@
 .book_consultation {
 	font-size: 2rem;
 	font-weight: 800;
+	width: 40%;
+	height: 3.5rem;
+	margin-top: 2.5rem;
 }
 
-.book_number {
-	color: #fff;
-	font-size: 2rem;
-	font-weight: 600;
-    margin-left: 1rem;
+.buttonLink {
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
 }
