@@ -3,6 +3,31 @@ import styles from './Form.module.css';
 import React from 'react';
 import { useState } from 'react';
 
+
+
+// Define initial state for one value
+const initialState = {
+    data : {
+        fullName : ""
+    },
+    error : false
+}
+
+
+// Write reducer function
+const reducer = (state, action) => {
+    switch (action.type){
+        case 'CHANGE_FIELD': 
+        return {
+            data : {
+                ...state.data, [action.payload.fieldName] : action.payload.fieldValue
+            }
+        } 
+        default:
+        return state;
+    }
+}
+
 export default function Form() {
 
     // Create state that stores the content inside fullname input box
