@@ -7,6 +7,9 @@ import { useState, useReducer } from "react";
 const initialState = {
 	data: {
 		fullName: "",
+		postcode: "",
+		address: "",
+		city: "",
 	},
 	error: false,
 };
@@ -34,13 +37,13 @@ export default function Form() {
 	// Define a function that
 	const handleChange = function (event) {
 		// Change state of fullName to the inputted value
-			dispatch ({
-				type: "CHANGE_FIELD",
-				payload: {
-					fieldName: event.target.name,
-					fieldValue: event.target.value
-				}
-			});
+		dispatch({
+			type: "CHANGE_FIELD",
+			payload: {
+				fieldName: event.target.name,
+				fieldValue: event.target.value,
+			},
+		});
 	};
 
 	// Create state to show error status (false means no error)
@@ -51,13 +54,18 @@ export default function Form() {
 		event.preventDefault();
 		// should check for empty fields
 		// if any field is empty,
-		if (!state.data.fullName) {
+		if (
+			!state.data.fullName ||
+			!state.data.postcode ||
+			!state.data.address ||
+			!state.data.city
+		) {
 			// should display error and prompt to fill form
 			setIsError(true);
 			console.log("line 60 form.jsx error - all fields required");
 			// else, console log filled fields
 		} else {
-			console.log("full name: ", state.data.fullName);
+			console.log("data: ", state.data);
 			setIsError(false);
 		}
 	};
@@ -75,13 +83,34 @@ export default function Form() {
 						value={state.data.fullName}
 					/>
 				</label>
-                <label>
-					Full Name: * <br />
+
+				<label>
+					Postcode: * <br />
 					<input
 						type="text"
-						name="fullName"
+						name="postcode"
 						onChange={(e) => handleChange(e)}
-						value={state.data.fullName}
+						value={state.data.postcode}
+					/>
+				</label>
+
+				<label>
+					House/Flat No. & Street Name : * <br />
+					<input
+						type="text"
+						name="address"
+						onChange={(e) => handleChange(e)}
+						value={state.data.address}
+					/>
+				</label>
+
+				<label>
+					City: * <br />
+					<input
+						type="text"
+						name="city"
+						onChange={(e) => handleChange(e)}
+						value={state.data.city}
 					/>
 				</label>
 			</fieldset>
