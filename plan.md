@@ -91,9 +91,12 @@
   > Test ✅
 - Move the one field over to use useReducer ✅
   > Test ✅
-- Move rest of first fieldset over to useReducer
+- Move rest of first fieldset over to useReducer ✅
+  > Test ✅
+- Move second fieldset over to useReducer ✅
+  > Test ✅
+- update error functionality to use useReducer
   > Test
-
 
 # Desktop
 

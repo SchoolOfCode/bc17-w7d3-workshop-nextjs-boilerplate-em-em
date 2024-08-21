@@ -10,6 +10,8 @@ const initialState = {
 		postcode: "",
 		address: "",
 		city: "",
+		phone_num: "",
+		email: ""
 	},
 	error: false,
 };
@@ -23,6 +25,11 @@ const reducer = (state, action) => {
 					...state.data,
 					[action.payload.fieldName]: action.payload.fieldValue,
 				},
+				// error: state.error
+			};
+		case "ERROR":
+			return {
+				error: true
 			};
 		default:
 			return state;
@@ -58,7 +65,9 @@ export default function Form() {
 			!state.data.fullName ||
 			!state.data.postcode ||
 			!state.data.address ||
-			!state.data.city
+			!state.data.city ||
+			!state.data.phone_num ||
+			!state.data.email
 		) {
 			// should display error and prompt to fill form
 			setIsError(true);
@@ -72,7 +81,7 @@ export default function Form() {
 
 	return (
 		<form method="post" onSubmit={handleSubmit}>
-			<fieldset className={styles.personalInfo}>
+			<fieldset className={styles.fieldset}>
 				<legend>Personal Information: </legend>
 				<label>
 					Full Name: * <br />
@@ -115,8 +124,26 @@ export default function Form() {
 				</label>
 			</fieldset>
 
-			<fieldset className={styles.contactInfo}>
+			<fieldset className={styles.fieldset}>
 				<legend>Contact Information: </legend>
+				<label>
+					Phone Number: * <br />
+					<input
+						type="text"
+						name="phone_num"
+						onChange={(e) => handleChange(e)}
+						value={state.data.phone_num}
+					/>
+				</label>
+				<label>
+					Email Address: * <br />
+					<input
+						type="text"
+						name="email"
+						onChange={(e) => handleChange(e)}
+						value={state.data.email}
+					/>
+				</label>
 			</fieldset>
 			{isError && (
 				<p style={{ color: "red" }}>
