@@ -28,7 +28,7 @@ const reducer = (state, action) => {
 
 export default function Form() {
 	// Create state that stores the content inside fullname input box
-	const [fullName, setFullName] = useState("");
+	// const [fullName, setFullName] = useState("");
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	// Define a function that
@@ -57,7 +57,7 @@ export default function Form() {
 			console.log("line 60 form.jsx error - all fields required");
 			// else, console log filled fields
 		} else {
-			console.log("full name: ", fullName);
+			console.log("full name: ", state.data.fullName);
 			setIsError(false);
 		}
 	};
@@ -72,7 +72,7 @@ export default function Form() {
 						type="text"
 						name="fullName"
 						onChange={(e) => handleChange(e)}
-						value={fullName}
+						value={state.data.fullName}
 					/>
 				</label>
 			</fieldset>
