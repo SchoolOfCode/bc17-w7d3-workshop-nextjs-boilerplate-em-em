@@ -34,15 +34,13 @@ export default function Form() {
 	// Define a function that
 	const handleChange = function (event) {
 		// Change state of fullName to the inputted value
-		if (event.target.name === "fullName") {
-			dispatch({
+			dispatch ({
 				type: "CHANGE_FIELD",
 				payload: {
 					fieldName: event.target.name,
-					fieldValue: event.target.value,
-				},
+					fieldValue: event.target.value
+				}
 			});
-		}
 	};
 
 	// Create state to show error status (false means no error)
@@ -53,9 +51,9 @@ export default function Form() {
 		event.preventDefault();
 		// should check for empty fields
 		// if any field is empty,
-		if (fullName === "") {
+		if (!state.data.fullName) {
 			// should display error and prompt to fill form
-			setIsError(!isError);
+			setIsError(true);
 			console.log("line 60 form.jsx error - all fields required");
 			// else, console log filled fields
 		} else {
