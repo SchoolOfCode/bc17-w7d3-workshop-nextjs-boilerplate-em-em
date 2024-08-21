@@ -74,7 +74,7 @@ export default function Form() {
 			console.log("line 60 form.jsx error - all fields required");
 			// else, console log filled fields
 		} else {
-			console.log("data: ", state.data);
+			console.log("data: ", String(...state.data));
 			setIsError(false);
 		}
 	};
@@ -82,7 +82,7 @@ export default function Form() {
 	return (
 		<form method="post" onSubmit={handleSubmit}>
 			<fieldset className={styles.fieldset}>
-				<legend>Personal Information: </legend>
+				<legend className={styles.groupTitle}>Personal Information: </legend>
 				<label>
 					Full Name: * <br />
 					<input
@@ -90,6 +90,7 @@ export default function Form() {
 						name="fullName"
 						onChange={(e) => handleChange(e)}
 						value={state.data.fullName}
+						className={styles.field}
 					/>
 				</label>
 
@@ -100,6 +101,7 @@ export default function Form() {
 						name="postcode"
 						onChange={(e) => handleChange(e)}
 						value={state.data.postcode}
+						className={styles.field}
 					/>
 				</label>
 
@@ -110,6 +112,7 @@ export default function Form() {
 						name="address"
 						onChange={(e) => handleChange(e)}
 						value={state.data.address}
+						className={styles.field}
 					/>
 				</label>
 
@@ -120,12 +123,13 @@ export default function Form() {
 						name="city"
 						onChange={(e) => handleChange(e)}
 						value={state.data.city}
+						className={styles.field}
 					/>
 				</label>
 			</fieldset>
 
 			<fieldset className={styles.fieldset}>
-				<legend>Contact Information: </legend>
+				<legend className={styles.groupTitle}>Contact Information: </legend>
 				<label>
 					Phone Number: * <br />
 					<input
@@ -133,6 +137,7 @@ export default function Form() {
 						name="phone_num"
 						onChange={(e) => handleChange(e)}
 						value={state.data.phone_num}
+						className={styles.field}
 					/>
 				</label>
 				<label>
@@ -142,6 +147,7 @@ export default function Form() {
 						name="email"
 						onChange={(e) => handleChange(e)}
 						value={state.data.email}
+						className={styles.field}
 					/>
 				</label>
 			</fieldset>
@@ -150,7 +156,7 @@ export default function Form() {
 					Error all fields are required - some missing
 				</p>
 			)}
-			<button type="submit">Request Design Consultation</button>
+			<button className={styles.submitButton} type="submit">Request Design Consultation</button>
 		</form>
 	);
 }

@@ -1,0 +1,9 @@
+.title {
+    background-color: orange;
+    font-size: 3.5rem;
+    padding-left: 1rem;
+    height: 7rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
