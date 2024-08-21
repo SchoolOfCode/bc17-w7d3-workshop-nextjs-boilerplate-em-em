@@ -7,7 +7,14 @@ export default function Form() {
 
     // Create state that stores the content inside fullname input box
     
-	const[formData, setFormData] = useState({fullName: '', postcode:'', address:'', city:'', phone_num:'', email:''});
+	const[formData, setFormData] = useState({
+		fullName: '', 
+		postcode:'', 
+		address:'', 
+		city:'', 
+		phone_num:'', 
+		email:''
+	});
 
     // Define a function that 
     const handleChange = function (event) {
