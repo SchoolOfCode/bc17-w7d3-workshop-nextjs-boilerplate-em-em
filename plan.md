@@ -84,6 +84,15 @@
   - Show error if empty field
 - Console.log all the form data
 
+## Reduce Refactor
+
+- Copy existing Form files as a backup ✅
+- Delete all fields but one ✅
+  > Test ✅
+- Move the one field over to use useReducer
+  > Test
+-
+
 # Desktop
 
 - Adjust the styling for desktop (media query)
