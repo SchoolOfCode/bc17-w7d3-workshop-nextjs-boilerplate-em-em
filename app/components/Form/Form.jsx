@@ -67,11 +67,14 @@ export default function Form() {
 	// Create handler function for submitting form.
 	const handleSubmit = function (event) {
 		event.preventDefault();
+		//set a 3 sec timer - as a minimum time to allow the submitting display to actually show
+		dispatch({
+			type: "SUBMITTING"
+		})
+		
+		setTimeout(() => {
 		// should check for empty fields
 		// if any field is empty,
-
-        //set a 3 sec timer - as a minimum time to allow the submitting display to actually show
-
 		if (
 			!state.data.fullName ||
 			!state.data.postcode ||
@@ -91,8 +94,9 @@ export default function Form() {
 			dispatch({
 				type: "SUCCESS"
 			})
-		}
-	};
+		} 
+	}, 3000)
+};
 
 	return (
 		<form method="post" onSubmit={handleSubmit}>
