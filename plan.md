@@ -95,13 +95,23 @@
   > Test ✅
 - Move second fieldset over to useReducer ✅
   > Test ✅
-- update error functionality to use useReducer
-  > Test
+- Update error functionality to use useReducer ✅
+  > Test ✅
+- Clean up code ✅
 
 
 
 As a user when I submit the form it should  show me that it is submitting.
-- 
+- Create status inside of state ✅
+- Create a case scenario in reducer function for when the status is 'submitting' ✅
+- When a user clicks on the submit button:
+  - There should be a slight delay (3s)
+  - On the submit button it should say 'Requesting...'
+- Create a ternery that will only display submission indicator if state's status is on 'submitting'
+
+
+
+
 # Desktop
 
 - Adjust the styling for desktop (media query)

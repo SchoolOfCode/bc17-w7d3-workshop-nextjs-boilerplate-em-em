@@ -69,6 +69,9 @@ export default function Form() {
 		event.preventDefault();
 		// should check for empty fields
 		// if any field is empty,
+
+        //set a 3 sec timer - as a minimum time to allow the submitting display to actually show
+
 		if (
 			!state.data.fullName ||
 			!state.data.postcode ||
