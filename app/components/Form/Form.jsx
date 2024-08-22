@@ -33,6 +33,7 @@ const reducer = (state, action) => {
 				status: "error"
 			};
 		case "SUCCESS":
+			alert("Form Successfully Submitted");
 			return {
 				...state,
 				status : "success"
@@ -171,8 +172,13 @@ export default function Form() {
 				</label>
 			</fieldset>
 			{state.status === "error" && (
-				<p style={{ color: "red" }}>
+				<p style={{ color: "red", padding: "1rem 0 0 0", fontSize: "2rem"  }}>
 					Error all fields are required - some missing
+				</p>
+			)}
+			{state.status === "success" && (
+				<p style={{ color: "green", padding: "1rem 0 0 0", fontSize: "2rem" }}>
+					Form submitted successfully!!
 				</p>
 			)}
 			<button className={styles.submitButton} type="submit" disabled={state.status === "submitting" ? true : false}>
