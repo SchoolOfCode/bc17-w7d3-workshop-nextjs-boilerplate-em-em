@@ -175,13 +175,8 @@ export default function Form() {
 					Error all fields are required - some missing
 				</p>
 			)}
-			<button className={styles.submitButton} type="submit" >
-				{state.status === "submitting"
-					? "Requesting ..."
-					: "Request Design Consultation"}
-				
-
-
+			<button className={styles.submitButton} type="submit" disabled={state.status === "submitting" ? true : false}>
+				{state.status === "submitting" ? "Requesting ..." : "Request Design Consultation"}
 			</button>
 		</form>
 	);
