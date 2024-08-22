@@ -98,6 +98,10 @@
 - update error functionality to use useReducer
   > Test
 
+
+
+As a user when I submit the form it should  show me that it is submitting.
+- 
 # Desktop
 
 - Adjust the styling for desktop (media query)

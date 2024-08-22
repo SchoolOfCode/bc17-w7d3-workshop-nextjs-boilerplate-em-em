@@ -13,7 +13,8 @@ const initialState = {
 		phone_num: "",
 		email: ""
 	},
-	error: false,
+	
+	status: "editing"
 };
 
 // Write reducer function
@@ -29,12 +30,18 @@ const reducer = (state, action) => {
 		case "ERROR":
 			return {
 				...state,
-				error: true
+				status: "error"
 			};
 		case "SUCCESS":
 			return {
 				...state,
-				error: false
+				status : "success"
+			}
+
+		case "SUBMITTING": 
+			return {
+				...state,
+				status : "submitting"
 			}
 		default:
 			return state;
@@ -156,7 +163,7 @@ export default function Form() {
 					/>
 				</label>
 			</fieldset>
-			{state.error && (
+			{state.status === "error" && (
 				<p style={{ color: "red" }}>
 					Error all fields are required - some missing
 				</p>
