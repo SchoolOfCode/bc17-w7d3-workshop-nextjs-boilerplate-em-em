@@ -24,21 +24,25 @@ const reducer = (state, action) => {
 				data: {
 					...state.data,
 					[action.payload.fieldName]: action.payload.fieldValue,
-				},
-				// error: state.error
+				}
 			};
 		case "ERROR":
 			return {
+				...state,
 				error: true
 			};
+		case "SUCCESS":
+			return {
+				...state,
+				error: false
+			}
 		default:
 			return state;
 	}
 };
 
 export default function Form() {
-	// Create state that stores the content inside fullname input box
-	// const [fullName, setFullName] = useState("");
+	// initialise reducer hook passing reducer function and initial state created above
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	// Define a function that
@@ -52,9 +56,6 @@ export default function Form() {
 			},
 		});
 	};
-
-	// Create state to show error status (false means no error)
-	const [isError, setIsError] = useState(false);
 
 	// Create handler function for submitting form.
 	const handleSubmit = function (event) {
@@ -70,12 +71,16 @@ export default function Form() {
 			!state.data.email
 		) {
 			// should display error and prompt to fill form
-			setIsError(true);
-			console.log("line 60 form.jsx error - all fields required");
+			// dispatch error action type
+			dispatch({
+				type: "ERROR"
+			})
 			// else, console log filled fields
 		} else {
-			console.log("data: ", String(...state.data));
-			setIsError(false);
+			console.log("data: ", state.data);
+			dispatch({
+				type: "SUCCESS"
+			})
 		}
 	};
 
@@ -151,7 +156,7 @@ export default function Form() {
 					/>
 				</label>
 			</fieldset>
-			{isError && (
+			{state.error && (
 				<p style={{ color: "red" }}>
 					Error all fields are required - some missing
 				</p>
