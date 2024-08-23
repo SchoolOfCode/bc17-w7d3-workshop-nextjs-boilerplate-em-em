@@ -1,0 +1,38 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('about:blank');
+  await page.goto('chrome-error://chromewebdata/');
+  await page.getByLabel('Full Name: *').click();
+  await page.getByLabel('Postcode: *').click();
+  await page.getByLabel('Postcode: *').fill('n12 9an');
+  await page.getByLabel('Postcode: *').press('Tab');
+  await expect(page.getByLabel('Full Name: *')).toBeVisible();
+  await page.getByLabel('House/Flat No. & Street Name').click();
+  await page.getByLabel('House/Flat No. & Street Name').fill('2 high road');
+  await page.getByLabel('House/Flat No. & Street Name').press('Tab');
+  await page.getByLabel('Full Name: *').click();
+  await page.getByLabel('Full Name: *').fill('ann christie');
+  await page.getByLabel('Full Name: *').press('Enter');
+  await expect(page.getByLabel('City: *')).toBeVisible();
+  await page.getByLabel('City: *').click();
+  await expect(page.getByLabel('City: *')).toBeEmpty();
+  await page.getByLabel('Phone Number: *').click();
+  await page.getByLabel('City: *').click();
+  await expect(page.getByLabel('City: *')).toBeVisible();
+  await page.getByLabel('City: *').dblclick();
+  await page.getByLabel('City: *').click();
+  await page.getByLabel('City: *').fill('london');
+  await expect(page.getByLabel('Phone Number: *')).toBeEmpty();
+  await page.getByLabel('Full Name: *').click();
+  await page.getByLabel('Full Name: *').click();
+  await page.getByLabel('Full Name: *').click();
+  await expect(page.getByLabel('Full Name: *')).toHaveValue('ann christie');
+  await expect(page.getByRole('button', { name: 'Request Design Consultation' })).toBeVisible();
+  await page.getByRole('button', { name: 'Request Design Consultation' }).click();
+  await page.getByText('Contact Information:').click();
+  await page1.goto('https://trace.playwright.dev/');
+  await page1.getByRole('button', { name: 'Select file(s)' }).click();
+  await page1.getByRole('heading', { name: 'Drop Playwright Trace to load' }).click();
+  await page1.getByRole('heading', { name: 'Drop Playwright Trace to load' }).click();
+});
