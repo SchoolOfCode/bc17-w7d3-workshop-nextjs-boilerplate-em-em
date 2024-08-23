@@ -3,7 +3,7 @@ import styles from "./Form.module.css";
 import React from "react";
 import { useState, useReducer } from "react";
 
-// Define initial state for one value
+// Define initial state for each of the values in the form
 const initialState = {
 	data: {
 		fullName: "",
@@ -17,20 +17,21 @@ const initialState = {
 	status: "editing"
 };
 
-// Write reducer function
+// Write reducer function that returns a new state depending on
+// the switch case of scenario of action.type
 const reducer = (state, action) => {
 	switch (action.type) {
 		case "CHANGE_FIELD":
 			return {
 				data: {
-					...state.data,
-					[action.payload.fieldName]: action.payload.fieldValue,
+					...state.data,      // this returns the data object contained in the state and spreads it out
+					[action.payload.fieldName]: action.payload.fieldValue   // this adds this key:value to the data object
 				}
 			};
 		case "ERROR":
 			return {
 				...state,
-				status: "error"
+				status: "error"     // here, the status key within the state changes from 'editing' to 'error'
 			};
 		case "SUCCESS":
 			return {
@@ -48,11 +49,14 @@ const reducer = (state, action) => {
 	}
 };
 
+// Create the component Form which will be used in the booking page
 export default function Form() {
-	// initialise reducer hook passing reducer function and initial state created above
+	
+    // Initialise reducer hook which passes the reducer function and initial state created above
 	const [state, dispatch] = useReducer(reducer, initialState);
 
-	// Define a function that
+	// Define a function that dispatches an action.type to the reducer function
+    // as soon as any change has occured in the form's values
 	const handleChange = function (event) {
 		// Change state of fullName to the inputted value
 		dispatch({
@@ -64,7 +68,8 @@ export default function Form() {
 		});
 	};
 
-	// Create handler function for submitting form.
+	// Create handler function for submitting form by dispatching the 'SUBMITTING'
+    // action type to the reducer function
 	const handleSubmit = function (event) {
 		event.preventDefault();
 		//set a 3 sec timer - as a minimum time to allow the submitting display to actually show
@@ -72,8 +77,9 @@ export default function Form() {
 			type: "SUBMITTING"
 		})
 		
+        // Set a timer for 3 seconds which allows a better user experience
 		setTimeout(() => {
-		// should check for empty fields
+		
 		// if any field is empty,
 		if (
 			!state.data.fullName ||
@@ -83,8 +89,7 @@ export default function Form() {
 			!state.data.phone_num ||
 			!state.data.email
 		) {
-			// should display error and prompt to fill form
-			// dispatch error action type
+			// Dispatch error action type to reducer
 			dispatch({
 				type: "ERROR"
 			})
@@ -170,6 +175,9 @@ export default function Form() {
 					/>
 				</label>
 			</fieldset>
+
+            {/* If the state's status shows an error, display an error message in red for user
+             otherwise display a green 'success' message*/}
 			{state.status === "error" && (
 				<p style={{ color: "red", padding: "1rem 0 0 0", fontSize: "2rem"  }}>
 					Error all fields are required - some missing
@@ -181,7 +189,9 @@ export default function Form() {
 				</p>
 			)}
 			<button className={styles.submitButton} type="submit" disabled={state.status === "submitting" ? true : false}>
-				{state.status === "submitting" ? "Requesting ..." : "Request Design Consultation"}
+				
+                {/* Visual indicator that the form is being submitted depending on state's status */}
+                {state.status === "submitting" ? "Requesting ..." : "Request Design Consultation"}
 			</button>
 		</form>
 	);
