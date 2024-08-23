@@ -99,9 +99,8 @@
   > Test ✅
 - Clean up code ✅
 
+As a user when I submit the form it should show me that it is submitting.
 
-
-As a user when I submit the form it should  show me that it is submitting.
 - Create status inside of state ✅
 - Create a case scenario in reducer function for when the status is 'submitting' ✅
 - When a user clicks on the submit button:
@@ -109,31 +108,25 @@ As a user when I submit the form it should  show me that it is submitting.
   - On the submit button it should say 'Requesting...' ✅
 - Create a ternery that will only display submission indicator if state's status is on 'submitting' ✅
 
-
-
 - As a user I should not be able to submit again while it is submitting.
-
-
 
 # Hackathon Plan
 
 ## Polish up
-- Review buttons 
-    - get them to close upon clicking again
-    - highlight the one that is opened
-- Book consultation css
-- (Maybe make buttons)
+
+- Review buttons
+  - get them to close upon clicking again 🟠
+  - highlight the one that is opened 🟠
+- Book consultation css ✅
+- Make burger menu a button for accessibility purposes
 
 ## Testing
-- Refer to user journeys
-- Install Playwright
+
+- Draw out user journeys in Miro ✅
+- Install Playwright ✅
 - Create a test per user journey:
-    - Journey 1:
-
-
-
-
-
+  - Journey 1: Book Consultation
+    - Plan what to click and assert
 
 # Desktop
 

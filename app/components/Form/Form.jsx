@@ -33,7 +33,6 @@ const reducer = (state, action) => {
 				status: "error"
 			};
 		case "SUCCESS":
-			alert("Form Successfully Submitted");
 			return {
 				...state,
 				status : "success"
