@@ -113,6 +113,28 @@ As a user when I submit the form it should  show me that it is submitting.
 
 - As a user I should not be able to submit again while it is submitting.
 
+
+
+# Hackathon Plan
+
+## Polish up
+- Review buttons 
+    - get them to close upon clicking again
+    - highlight the one that is opened
+- Book consultation css
+- (Maybe make buttons)
+
+## Testing
+- Refer to user journeys
+- Install Playwright
+- Create a test per user journey:
+    - Journey 1:
+
+
+
+
+
+
 # Desktop
 
 - Adjust the styling for desktop (media query)
